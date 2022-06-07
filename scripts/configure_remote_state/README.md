@@ -7,3 +7,9 @@ storage account and container.
 * Azure storage accounts require a globally unique name. To learn more about 
 troubleshooting storage account names, see 
 [Resolve errors for storage account names.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/error-storage-account-name)
+* Azure Storage blobs are automatically locked before any operation that writes 
+state. This pattern prevents concurrent state operations, which can cause 
+corruption.
+* For more information, see 
+[State locking](https://www.terraform.io/docs/state/locking.html) 
+in the Terraform documentation.
