@@ -7,7 +7,7 @@ terraform {
   }
   backend "azurerm" {
     resource_group_name  = "tfstate"
-    storage_account_name = "tfstatevolcx"
+    storage_account_name = "tfstateeow50"
     container_name       = "tfstate"
     key                  = "azure-powerhour-demo/terraform.tfstate"
   }
