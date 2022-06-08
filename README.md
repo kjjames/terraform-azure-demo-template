@@ -6,3 +6,6 @@ For more information about options to authenticate Terraform to Azure, see
 * Install Azure CLI tools `brew install azure-cli`
 * Authenticate with Azure `az login`
 * Run Terraform commands `terraform init` and `terraform apply`
+* Copy the output `STORAGE_ACCOUNT_NAME=<copy_this_value>` and use that value 
+  to configure your remote backend storage in your Terraform project  
+  **Note: Change the backend key to reuse the storage account for multiple TF projects**

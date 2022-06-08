@@ -1,6 +1,14 @@
 ## Usage
-Run the command `terraform init`, then `terraform apply` to configure the Azure 
+Execute the numbered scripts in order.
+
+1. Run the command `terraform init`, then `terraform apply` to configure the Azure 
 storage account and container.
+2. Execute the script in the current shell environment to properly set env vars   
+   **Note: you must run `brew install jq` and `az login` first**  
+   Example:  
+   ```bash
+   . ./2.set_backend_storage_env_vars.sh     # identical to "source ./2.set_backend_storage_env_vars.sh"
+   ```
 
 ### Key points:
 * Public access is allowed to Azure storage account for storing Terraform state.
