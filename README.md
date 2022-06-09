@@ -12,3 +12,7 @@ For more information about options to authenticate Terraform to Azure, see
 * Install Azure CLI tools: `brew install azure-cli`
 * Authenticate with Azure: `az login`
 * Run Terraform commands: `terraform init` and `terraform apply`
+
+## Usage
+* Initialize remote storage for Terraform state by executing the scripts in the 
+  `init` folder in order.
