@@ -15,7 +15,7 @@ output "storage_account_name" {
 }
 
 output "client_id" {
-  value = azuread_application.tfstate_app.id
+  value = azuread_application.tfstate_app.application_id
 }
 
 output "client_secret" {
