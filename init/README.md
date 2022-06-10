@@ -1,23 +1,31 @@
 ## Requirements
-You must have `jq` installed. Example `brew install jq`.  
-And you must autheticate via the Azure CLI. Example `az login`.
+#### jq
+See [docs](https://stedolan.github.io/jq/).  
+`brew install jq`
+#### Terraform
+See [docs](https://learn.hashicorp.com).  
+`brew install terraform`
+#### Azure CLI
+See [docs](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos).  
+`brew install azure-cli`  
+Example: `az login`
+
+## Context
+The following scripts facilitate the creation of the neccessary resources needed 
+to setup remote Terraform state storage using Azure blog storage. The output values 
+of the final shell script are needed to configure GitHub Actions and to configure 
+the `backend` block in whichever Terraform project you are using this remote storage.
 
 ## Usage
+_Note: Change the backend_ `key` _to reuse the storage account for multiple TF projects._  
 Execute the numbered scripts in order.
-
-1. Run the command `terraform init`, then `terraform apply` to configure the Azure 
-   storage account and container.
-2. Execute the script in the current shell environment to properly set env vars   
-   Example:  
-   ```bash
-   . ./2.set_backend_storage_env_vars.sh     # identical to "source ./2.set_backend_storage_env_vars.sh"
+1. Run the command `terraform init`, then `terraform apply`.
+2. You **must execute the script in the current shell environment**. See example,  
    ```
-3. Copy the output `STORAGE_ACCOUNT_NAME=<copy_this_value>` and use that value 
-   to configure your remote backend storage in your Terraform project  
-   **Note: Change the backend `key` to reuse the storage account for multiple TF projects**
+   $ . ./2.set_backend_storage_env_vars.sh     # identical to "source ./2.set_backend_storage_env_vars.sh"
+   ```
 
 ### Key points:
-* Public access is allowed to Azure storage account for storing Terraform state.
 * Azure storage accounts require a globally unique name. To learn more about 
 troubleshooting storage account names, see 
 [Resolve errors for storage account names.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/error-storage-account-name)

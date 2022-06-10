@@ -6,13 +6,11 @@ It also includes a boilerplate Github actions pipeline to deploy to Azure.
 For more information about options to authenticate Terraform to Azure, see 
 [Authenticating using the Azure CLI.](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/guides/azure_cli)
 
-
-## Requirements
-* Set neccessary Azure credentials variables in GitHub Repository Secrets.
-* Install Azure CLI tools: `brew install azure-cli`
-* Authenticate with Azure: `az login`
-* Run Terraform commands: `terraform init` and `terraform apply`
-
 ## Usage
 Initialize remote storage for Terraform state by executing the scripts in the 
-`init` folder in order.
+`init` folder. Follow the instructions in the README.
+
+## Requirements
+* The following GitHub Action repository secrets are required:  
+  `AZURE_AD_CLIENT_ID`, `AZURE_AD_CLIENT_SECRET`, `AZURE_AD_TENANT_ID` and `AZURE_SUBSCRIPTION_ID`.
+
