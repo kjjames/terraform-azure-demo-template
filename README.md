@@ -11,6 +11,6 @@ Initialize remote storage for Terraform state by executing the scripts in the
 `init` folder. Follow the instructions in the README.
 
 ## Requirements
-* The following GitHub Action repository secrets are required:
+* The following GitHub Action repository secrets are required:  
   `AZURE_AD_CLIENT_ID`, `AZURE_AD_CLIENT_SECRET`, `AZURE_AD_TENANT_ID` and `AZURE_SUBSCRIPTION_ID`.
 
