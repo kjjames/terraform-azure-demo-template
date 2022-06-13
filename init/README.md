@@ -12,12 +12,13 @@ Example: `az login`
 
 ## Context
 The following scripts facilitate the creation of the neccessary resources needed 
-to setup remote Terraform state storage using Azure blog storage. The output values 
+to setup remote Terraform state storage using Azure blob storage. The output values 
 of the final shell script are needed to configure GitHub Actions and to configure 
 the `backend` block in whichever Terraform project you are using this remote storage.
 
 ## Usage
 _Note: Change the backend_ `key` _to reuse the storage account for multiple TF projects._  
+
 Execute the numbered scripts in order.
 1. Run the command `terraform init`, then `terraform apply`.
 2. You **must execute the script in the current shell environment**. See example,  
